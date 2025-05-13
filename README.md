@@ -44,11 +44,14 @@ int_reward_func：整數答案額外加分
 | Exp3 | 有 One-shot | 含懲罰 cosine 獎勵  | 過度懲罰導致準確率下降        |
 | Exp4 | 有 One-shot | 不含懲罰 cosine 獎勵 | 表現優於 Exp3，但不及 Exp2 |
 
+![image](https://github.com/giraffeiscute/python-LLM-Enhancing-Mathematical-Reasoning-Capability-in-LLM-through-RL/blob/main/chart/%E5%9C%96%E7%89%871.png)
+![image](https://github.com/giraffeiscute/python-LLM-Enhancing-Mathematical-Reasoning-Capability-in-LLM-through-RL/blob/main/chart/%E5%9C%96%E7%89%872.png)
 
 **實驗小結**
 1. 缺少提示會導致模型無法生成正確格式
 
 2. 過度依賴懲罰型獎勵可能導致推理結構混亂或答案錯誤
+
 
 📈 重要發現
 1. 提供例子 (one-shot) 能顯著提升格式與正確性
