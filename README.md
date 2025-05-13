@@ -44,16 +44,15 @@ int_reward_func：整數答案額外加分
 | Exp3 | 有 One-shot | 含懲罰 cosine 獎勵  | 過度懲罰導致準確率下降        |
 | Exp4 | 有 One-shot | 不含懲罰 cosine 獎勵 | 表現優於 Exp3，但不及 Exp2 |
 
+### 實驗2與實驗4之比較
 ![image](https://github.com/giraffeiscute/python-LLM-Enhancing-Mathematical-Reasoning-Capability-in-LLM-through-RL/blob/main/chart/%E5%9C%96%E7%89%871.png)
 ![image](https://github.com/giraffeiscute/python-LLM-Enhancing-Mathematical-Reasoning-Capability-in-LLM-through-RL/blob/main/chart/%E5%9C%96%E7%89%872.png)
+實驗4通過獎勵函數引導模型適當縮短思考過程的長度，使得其生成的答案長度相較於實驗2顯著縮短。<br/> 然而，這種**長度上的精簡化也伴隨著一定的代價**：模型在縮減答案篇幅的同時，其回答準確率出現了輕微下降。
 
-**實驗小結**
-1. 缺少提示會導致模型無法生成正確格式
-
-2. 過度依賴懲罰型獎勵可能導致推理結構混亂或答案錯誤
+這表明，在優化模型生成效率（如控制輸出長度）與維持準確性之間，需謹慎權衡兩者的平衡關係。
 
 
-📈 重要發現
+## 重要發現
 1. 提供例子 (one-shot) 能顯著提升格式與正確性
 
 2. 過度懲罰會降低模型表現，特別是小模型
@@ -62,11 +61,11 @@ int_reward_func：整數答案額外加分
 
 4. 強化學習可有效改善結構化推理生成
 
-👥 作者
-楊致遠 Chih-Yuan Yang
-研究領域：大型語言模型、機器學習
+## 作者
+楊致遠 Chih-Yuan Yang <br/>
+研究領域：大型語言模型、機器學習 <br/>
 指導教授：陳偉堅 教授
 
-李林晁 Li Linchao
-研究領域：大型語言模型、擴散模型
+李林晁 Li Linchao <br/>
+研究領域：大型語言模型、擴散模型 <br/>
 指導教授：陳偉堅 教授
