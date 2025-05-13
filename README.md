@@ -1,3 +1,4 @@
+English version underneath
 # 使用 GRPO 增強小型語言模型的數學推理能力
 本專案探討如何透過強化學習技術，提升小型語言模型在數學推理任務中的表現。研究重點為使用 Group Relative Policy Optimization（GRPO） 方法，並結合多種自定義獎勵函數，在 GSM8K 數據集上優化 Chain-of-Thought（CoT）生成效果。
 
@@ -128,22 +129,22 @@ However, this reduction in length came at a cost: the model’s accuracy dropped
 
 This indicates a necessary trade-off between output efficiency (shorter generations) and answer correctness when tuning LLMs.
 
-Key Findings
-One-shot prompting significantly improves both formatting and correctness
+## Key Findings
+1. One-shot prompting significantly improves both formatting and correctness
 
-Over-penalization harms small model performance
+2. Over-penalization harms small model performance
 
-A positive correlation exists between reasoning length and accuracy (further validation needed)
+3. A positive correlation exists between reasoning length and accuracy (further validation needed)
 
-Reinforcement learning effectively improves structured reasoning generation
+4. Reinforcement learning effectively improves structured reasoning generation
 
-Authors
-Chih-Yuan Yang
-Research Interests: Large Language Models, Machine Learning
+## Authors
+Chih-Yuan Yang<br/>
+Research Interests: Large Language Models, Machine Learning<br/>
 Supervisor: Prof. Wei-Chien Chen
 
-Li Linchao
-Research Interests: Large Language Models, Diffusion Models
+Li Linchao<br/>
+Research Interests: Large Language Models, Diffusion Models<br/>
 Supervisor: Prof. Wei-Chien Chen
 
 
