@@ -4,7 +4,7 @@
 ## 專案背景
 小型語言模型在處理複雜推理任務時常因參數量有限而表現不佳。然而，透過 GRPO 等強化學習方法及人類回饋（RLHF），可大幅提升其邏輯推理能力，甚至在部分任務上逼近大型封閉模型（如 GPT-4）的表現。
 
-我們的實驗採用了 Qwen2.5-0.5B-Instruct 模型，一款開源且具商用授權的小型語言模型。
+我們的實驗採用了 Qwen2.5-0.5B-Instruct 模型，一款開源的小型語言模型。
 
 ## 研究目標
 1. 提升小型 LLM 處理算術與邏輯推理任務的能力
@@ -69,3 +69,81 @@ int_reward_func：整數答案額外加分
 李林晁 Li Linchao <br/>
 研究領域：大型語言模型、擴散模型 <br/>
 指導教授：陳偉堅 教授
+
+****
+# Enhancing Mathematical Reasoning Capability in Small Language Models with GRPO
+This project explores how reinforcement learning techniques can improve the performance of small language models on mathematical reasoning tasks. We focus on using Group Relative Policy Optimization (GRPO), combined with various custom reward functions, to enhance Chain-of-Thought (CoT) generation on the GSM8K dataset.
+
+## Project Background
+Small language models often struggle with complex reasoning tasks due to limited parameter size. However, reinforcement learning techniques like GRPO, coupled with human feedback (RLHF), can significantly boost their reasoning capabilities—sometimes approaching the performance of large proprietary models such as GPT-4.
+
+Our experiments use the Qwen2.5-0.5B-Instruct, an open-source small language model.
+
+## Objectives
+1. Improve the performance of small LLMs on arithmetic and logical reasoning tasks
+
+2. Explore the impact of different reward designs on training outcomes
+
+3. Compare one-shot prompting with strict output formatting
+
+4. Analyze the relationship between reasoning length and answer correctness
+
+## Custom Reward Functions
+Format Rewards:
+
+strict_format_reward_func: Full score only if both <reasoning> and <answer> are correctly formatted
+
+soft_format_reward_func: Allows slightly looser XML formatting
+
+count_xml: Partial score based on the number of correct tags
+
+Correctness Rewards:
+
+correctness_reward_func: Rewards only correct answers
+
+int_reward_func: Extra score if the answer is an integer
+
+Reasoning Length Reward:
+
+Rewards are based on cosine similarity between token length and the ideal range
+
+## Experimental Design
+We conducted four main experiments:
+
+| Experiment | Prompting       | Reward Strategy               | Notes                                      |
+| ---------- | --------------- | ----------------------------- | ------------------------------------------ |
+| Exp1       | No Prompt       | Standard Reward               | Worst performance due to formatting issues |
+| Exp2       | One-shot Prompt | Standard Reward               | Best format and correctness                |
+| Exp3       | One-shot Prompt | Reward with cosine penalty    | Accuracy dropped due to over-penalization  |
+| Exp4       | One-shot Prompt | Reward without cosine penalty | Better than Exp3, but worse than Exp2      |
+
+
+## Comparison Between Exp2 and Exp4
+![image](https://github.com/giraffeiscute/python-LLM-Enhancing-Mathematical-Reasoning-Capability-in-LLM-through-RL/blob/main/chart/%E5%9C%96%E7%89%871.png)
+![image](https://github.com/giraffeiscute/python-LLM-Enhancing-Mathematical-Reasoning-Capability-in-LLM-through-RL/blob/main/chart/%E5%9C%96%E7%89%872.png)
+
+
+In Exp4, the reward function successfully guided the model to shorten the length of reasoning, resulting in more concise answers compared to Exp2.
+However, this reduction in length came at a cost: the model’s accuracy dropped slightly as it compressed its reasoning.
+
+This indicates a necessary trade-off between output efficiency (shorter generations) and answer correctness when tuning LLMs.
+
+Key Findings
+One-shot prompting significantly improves both formatting and correctness
+
+Over-penalization harms small model performance
+
+A positive correlation exists between reasoning length and accuracy (further validation needed)
+
+Reinforcement learning effectively improves structured reasoning generation
+
+Authors
+Chih-Yuan Yang
+Research Interests: Large Language Models, Machine Learning
+Supervisor: Prof. Wei-Chien Chen
+
+Li Linchao
+Research Interests: Large Language Models, Diffusion Models
+Supervisor: Prof. Wei-Chien Chen
+
+
