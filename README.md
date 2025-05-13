@@ -141,10 +141,10 @@ This indicates a necessary trade-off between output efficiency (shorter generati
 ## Authors
 Chih-Yuan Yang<br/>
 Research Interests: Large Language Models, Machine Learning<br/>
-Supervisor: Prof. Wei-Chien Chen
+Supervisor: Prof. Wai Kin (Victor) Chan
 
 Li Linchao<br/>
 Research Interests: Large Language Models, Diffusion Models<br/>
-Supervisor: Prof. Wei-Chien Chen
+Supervisor: Prof. Wai Kin (Victor) Chan
 
 
